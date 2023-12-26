@@ -1,6 +1,6 @@
 import { luhn } from 'npm:cdigit@4'
 
-const NUMBER_LENGTH = 16
+export const NUMBER_LENGTH = 16
 
 export const generateNumber = (): string => {
     let digits = '544613'
