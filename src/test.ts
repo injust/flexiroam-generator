@@ -1,4 +1,4 @@
-import { generateNumber, NUMBER_LENGTH } from './mod.ts'
+import { generateNumber, IIN_LIST, NUMBER_LENGTH } from './mod.ts'
 import { assert, assertEquals } from '@std/assert'
 import { luhn } from 'npm:cdigit@4'
 
@@ -11,5 +11,10 @@ Deno.test('number length', () => {
 })
 
 Deno.test('number prefix', () => {
-    assert(generateNumber().startsWith('544613'))
+    const number = generateNumber()
+    assert(
+        Object.values(IIN_LIST).some((prefixes) =>
+            prefixes.some((prefix) => number.startsWith(prefix))
+        ),
+    )
 })
