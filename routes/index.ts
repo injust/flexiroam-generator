@@ -3,6 +3,7 @@ import { generateNumber } from '../src/mod.ts'
 
 export const handler: Handlers = {
     GET(_req: Request, _ctx: FreshContext) {
-        return new Response(generateNumber())
+        const digits = generateNumber()
+        return new Response((digits.match(/.{4}/g) ?? []).join(' '))
     },
 }
