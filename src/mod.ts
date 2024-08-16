@@ -2,7 +2,6 @@ import { sample } from '@std/collections'
 import { luhn } from 'npm:cdigit@4'
 
 export const IIN_LIST = {
-    'CAN': ['544613'],
     'CHN': [
         '519961',
         '523062',
